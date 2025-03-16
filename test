@@ -3,8 +3,10 @@
 # All paths are always relative to the script path
 cd "$(dirname "$0")"
 
+# Install pytest, which provides the test harness
 python3 -m venv venv
 source venv/bin/activate
 pip3 install pytest
 
-python3 -m pytest test.py
+# Run the tests
+python3 -m pytest test.py "$@"
