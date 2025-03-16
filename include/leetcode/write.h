@@ -42,7 +42,7 @@ struct Writer<Range> {
             if (first) {
                 first = false;
             } else {
-                std::cout << ',';
+                std::cout << ", ";
             }
             Writer<std::decay_t<decltype(value)>>::write(value);
         }

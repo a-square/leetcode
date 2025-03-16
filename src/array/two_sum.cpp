@@ -23,6 +23,7 @@ std::vector<int> twoSum(const std::vector<int>& nums, int target) {
 }
 
 int main() {
+    // TEST: [1, 2, 3, 0] 1 -> [0, 3]
     auto nums = lc::read<std::vector<int>>();
     auto target = lc::read<int>();
     auto result = twoSum(nums, target);

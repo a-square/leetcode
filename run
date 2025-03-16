@@ -29,6 +29,9 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
+# All paths are always relative to the script path
+cd "$(dirname "$0")"
+
 # Get the path argument
 SOLUTION_SRC="$1"
 SOLUTION_BIN="bin/${SOLUTION_SRC%.*}.out"
@@ -51,7 +54,7 @@ fi
 
 # Compile the .cpp file using the Makefile
 msg_good "Compiling ${SOLUTION_SRC}..."
-make FILE="${SOLUTION_SRC}" TARGET="${SOLUTION_BIN}"
+make FILE="${SOLUTION_SRC}" TARGET="${SOLUTION_BIN}" > /dev/stderr
 
 # Check if compilation was successful
 if [ $? -ne 0 ]; then
